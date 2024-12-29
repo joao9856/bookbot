@@ -9,6 +9,7 @@ def main():
     print()
     for char in conv_dict: 
         print(f"The '{char["name"]}' character was found {char["num"]} times")
+    print("--- End report ---")
 
 
 def sort_on(dict):
