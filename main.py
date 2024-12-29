@@ -4,9 +4,11 @@ def main():
     char_count = char_appearence(text)
     conv_dict = conv(char_count)
     conv_dict.sort(reverse=True, key=sort_on)
+
     print("--- Begin report of books/frankenstein.txt ---")
     print(f"{text_len} words found in the document")
     print()
+    
     for char in conv_dict: 
         print(f"The '{char["name"]}' character was found {char["num"]} times")
     print("--- End report ---")
