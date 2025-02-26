@@ -11,13 +11,16 @@ def main():
     conv_dict = conv(char_count)
     conv_dict.sort(reverse=True, key=sort_on)
 
-    print("--- Begin report of books/frankenstein.txt ---")
-    print(f"{text_len} words found in the document")
-    print()
+    print("============ BOOKBOT ============")
+    print("--- Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {text_len} total words")
+    print("--------- Character Count -------")
     
     for char in conv_dict: 
-        print(f"The '{char["name"]}' character was found {char["num"]} times")
-    print("--- End report ---")
+        print(f"{char["name"]}: {char["num"]}")
+
+    print("============= END ===============")
 
 
 def sort_on(dict):
