@@ -1,3 +1,5 @@
+from stats import word_count
+
 def main():
     text = text_from_file("books/frankenstein.txt")
     text_len = word_count(text)
@@ -29,10 +31,6 @@ def conv(to_conv):
 def text_from_file(path):
     with open(path) as f:
         return f.read()
-    
-
-def word_count(to_count):
-    return len(to_count.split())
 
 
 def char_appearence(to_count_char):
