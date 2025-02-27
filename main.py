@@ -2,17 +2,20 @@ from stats import word_count
 from stats import char_appearence
 from stats import sort_on
 from stats import conv
-
+import sys
 
 def main():
-    text = text_from_file("books/frankenstein.txt")
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    text = text_from_file(sys.argv[1])
     text_len = word_count(text)
     char_count = char_appearence(text)
     conv_dict = conv(char_count)
     conv_dict.sort(reverse=True, key=sort_on)
 
     print("============ BOOKBOT ============")
-    print("--- Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {sys.argv[1]}...")
     print("----------- Word Count ----------")
     print(f"Found {text_len} total words")
     print("--------- Character Count -------")
